@@ -14,7 +14,7 @@ class Bird{
     -posX : int
     -posY : int 
     -vida : bool
-    +chocar()
+    +saltar()
 }
 class Habilidad 
 class Impulso 
@@ -32,7 +32,7 @@ class Tubo{
 Juego "1" *--  "1" Jugador 
 Jugador o-- "1" Bird
 Bird "1" o-- "1" Habilidad
-Bird *-- Score 
+Juego *-- Score 
 Bird *-- Vida 
 Impulso --|> Habilidad
 Bird o-- Obstaculo

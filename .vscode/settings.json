@@ -1,0 +1,7 @@
+{
+    "cmake.sourceDirectory": "/workspaces/flappy-bird-project/FTXUI",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
