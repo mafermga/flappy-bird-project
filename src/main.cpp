@@ -1,7 +1,7 @@
-#include<../FTXUI/include/ftxui/component/animation.hpp>
-#include<../FTXUI/include/ftxui/dom/elements.hpp>
-#include<../FTXUI/include/ftxui/screen/screen.hpp>
-#include<../FTXUI/include/ftxui/screen/color.hpp>
+#include<ftxui/component/animation.hpp>
+#include<ftxui/dom/elements.hpp>
+#include<ftxui/screen/screen.hpp>
+#include<ftxui/screen/color.hpp>
 
 #include <iostream>
 #include <string>
