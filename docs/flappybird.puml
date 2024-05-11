@@ -1,7 +1,44 @@
 @startuml FlappyBird 
 
-class Juego
+class Juego{
+    -score : int
+    -pajaro : Bird
+    -tubos : list<Tubo>
+    +start()
+    +chocar()
+    +aumentarScore()
+    +gameOver()
+}
 class Jugador 
+class Bird{
+    -posX : int
+    -posY : int 
+    -vida : bool
+    +chocar()
+}
+class Habilidad 
+class Impulso 
+class Obstaculo 
+class Score 
+class Vida
+class Tubo{
+    -posX : int 
+    -posY : int 
+    -alto : int 
+    -ancho : int 
+    +moverIzquierda()
+}
+
+Juego "1" *--  "1" Jugador 
+Jugador o-- "1" Bird
+Bird "1" o-- "1" Habilidad
+Bird *-- Score 
+Bird *-- Vida 
+Impulso --|> Habilidad
+Bird o-- Obstaculo
+Tubo --|> Obstaculo
+Juego o-- Tubo
+
 
 
 
