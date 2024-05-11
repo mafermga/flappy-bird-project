@@ -1,0 +1,9 @@
+@startuml FlappyBird 
+
+class Juego
+class Jugador 
+
+
+
+
+@enduml 
