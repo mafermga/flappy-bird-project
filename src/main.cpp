@@ -45,12 +45,12 @@ int main(int argc, char const *argv[])
             if (ascendiendo)
             {
                 posY -= velocidadVertical;
-                if(posY <= 0)
+                if(posY <= 0 + 1)
                 ascendiendo = false;
             }
             else{
                 posY += velocidadVertical;
-                if(posY >= alto.dimy-posY)
+                if(posY >= alto.dimy-textos.size() - 1)
                 ascendiendo = true;
             }
             
