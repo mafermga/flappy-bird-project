@@ -32,15 +32,20 @@ int main(int argc, char const *argv[])
 
     int posX = 0;
     int posY = 6;
-
-    
+    int fixedX = 270;
 
     while (true)
     {
+        
+
         Dimensions alto = Dimension::Full();
         Dimensions ancho = Dimension::Full();
 
-        Screen pantalla = Screen::Create(ancho,alto);
+        Screen pantalla = Screen::Create(ancho, alto);
+        Element dibujo = border({
+            hbox(pantalla)
+        });
+        Render(pantalla, dibujo);
 
         int l = 0;
         for (auto &&texto : textos){
@@ -48,13 +53,19 @@ int main(int argc, char const *argv[])
 
             for (auto &&letra : texto)
             {
-                pantalla.PixelAt(posX + i, posY + l).character = letra;
+                //if (posX + i < ancho.dimx){
+                    pantalla.PixelAt(posX + i, posY + l).character = letra;
+                //}
                 i++;
             }
             l++;
             
         }
         posX++;
+
+        if(posX >= ancho.dimx){
+            posX = 0;
+        }
 
         pantalla.Print();
         reset = pantalla.ResetPosition();
