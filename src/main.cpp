@@ -32,19 +32,36 @@ int main(int argc, char const *argv[])
 
     int posX = 0;
     int posY = 6;
-    int fixedX = 270;
+    int velocidadVertical = 1;
+    bool ascendiendo = false;
 
     while (true)
     {
-        
 
         Dimensions alto = Dimension::Full();
         Dimensions ancho = Dimension::Full();
 
-        Screen pantalla = Screen::Create(ancho, alto);
+        if(true){
+            if (ascendiendo)
+            {
+                posY -= velocidadVertical;
+                if(posY <= 0)
+                ascendiendo = false;
+            }
+            else{
+                posY += velocidadVertical;
+                if(posY >= alto.dimy-posY)
+                ascendiendo = true;
+            }
+            
+        }
+
         Element dibujo = border({
-            hbox(pantalla)
+            hbox()
         });
+
+        Screen pantalla = Screen::Create(ancho, alto);
+        
         Render(pantalla, dibujo);
 
         int l = 0;
