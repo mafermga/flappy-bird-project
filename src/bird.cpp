@@ -37,6 +37,7 @@ void Bird::Update()
             sprite.move(0, 12);
             sprite.setRotation(sprite.getRotation() + 10); // Al momento de morir el sprite hara que gire como descontrolado
         }
+        return;
     }
 
     timerEstado--;

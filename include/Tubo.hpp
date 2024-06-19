@@ -1,12 +1,20 @@
 #pragma once 
 
-class Tubo
-{
-private:
-   int posX, posY, alto, ancho;
+#include <iostream>
+#include <SFML/Graphics.hpp>
 
-public:
-    void moverIzquierda (){}
+class Tubo : public sf::Drawable
+{
+    private:
+        sf::Sprite upSprite;
+        sf::Sprite downSprite;
+
+    public:
+        Tubo(sf::Texture&, int, int);
+        void Update();
+        bool Collision(sf::IntRect);
+        sf::Vector2f GetPosition();
+        virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 
 
