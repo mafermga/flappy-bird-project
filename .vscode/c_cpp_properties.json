@@ -1,15 +1,18 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw64/include",  // Ruta a los archivos de encabezado de SFML
+                "C:/msys64/mingw64/include/SFML"  // Añade esta línea para incluir el directorio específico de SFML
+                
             ],
             "defines": [],
-            "cStandard": "c17",
-            "compilerPath": "C:/MinGW/bin/g++",
+            "compilerPath": "C:/msys64/mingw64/bin/g++",
+            "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-clang-x64"
+            "intelliSenseMode": "windows-gcc-x64"
         }
     ],
     "version": 4
