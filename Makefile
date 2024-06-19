@@ -7,7 +7,9 @@ LIB_DIR = /mingw64/lib
 
 # Archivos de origen
 SRC = src/main.cpp \
-		src/bird.cpp
+		src/bird.cpp \
+		src/tubo.cpp \
+		src/parallax.cpp
 
 # Nombre del ejecutable
 TARGET = Game

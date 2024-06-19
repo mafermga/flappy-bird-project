@@ -8,6 +8,7 @@
 class Parallax : public sf::Drawable
 {
 private:
+    int last;
     int score;
     bool initiated;
     sf::Texture tuboTexture;
@@ -20,6 +21,6 @@ public:
     void Update();
     bool Collision(sf::IntRect);
     void Initiated();
-    int Score();
+    int ConsultScore();
     virtual void draw(sf::RenderTarget &, sf::RenderStates) const;
 };
