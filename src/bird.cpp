@@ -1,4 +1,4 @@
-#include "include/Bird.hpp"
+#include "../include/Bird.hpp"
 
 Bird::Bird(int x, int y)
 {
@@ -68,4 +68,20 @@ void Bird::Saltar()
 sf::Vector2f Bird::Getposition()
 {
     return sprite.getPosition();
+}
+
+bool Bird::GetLive(){
+    return vivo;
+}
+
+void Bird::Morir(){
+    vivo = false;
+}
+
+void Bird::Initiated(){
+    iniciado = true;
+}
+
+void Bird::draw(sf::RenderTarget &rt, sf::RenderStates rs) const{
+    rt.draw(sprite,rs);
 }

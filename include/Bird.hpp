@@ -22,7 +22,7 @@ public:
 
     void Morir();
 
-    void GetLive();
+    bool GetLive();
 
     sf::Vector2f Getposition();
     void Initiated();
