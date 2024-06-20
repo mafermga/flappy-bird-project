@@ -5,6 +5,7 @@
 #include <SFML/System.hpp>
 #include "../include/Bird.hpp"
 #include "../include/Parallax.hpp"
+#include "../include/UISound.hpp"
 
 
 int main(int argc, char const *argv[])
@@ -17,6 +18,8 @@ int main(int argc, char const *argv[])
 
     presionado = false;
 
+    UISound uis;
+
     while (window.isOpen())
     {
 
@@ -26,7 +29,7 @@ int main(int argc, char const *argv[])
         Bird *bird = new Bird(210, 350);
         Parallax * parallax = new Parallax;
         initiated = false;
-
+        uis.Initiated(false);
         while (true)
         {
             sf::Event event;
@@ -46,21 +49,30 @@ int main(int argc, char const *argv[])
                 if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&!presionado){
                     bird->Saltar();
                     presionado = true;
+                    uis.Wing();
                     if(!initiated){
                         initiated = true;
                         bird->Initiated();
                         parallax->Initiated();
+                        uis.Initiated(true);
+                        
                     }
                 }
+            
                 
-            }else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&!presionado){
+            }else{
+                uis.GameOver();
+            }
+            
+            if(!bird->GetLive()&&sf::Mouse::isButtonPressed(sf::Mouse::Left)&&!presionado){
                 presionado = true; //REINICIO DEL JUEGO
                 break;
             }
             sf::IntRect rect(bird->Getposition().x-23,bird->Getposition().y-21,44,40);
+
             if(parallax->Collision(rect)){
-                bird->Morir();
-            }
+				bird->Morir();
+			}
 
             if(bird->Getposition().y < 0 || bird->Getposition().y > 700-136){
                 bird->Morir();
@@ -71,9 +83,13 @@ int main(int argc, char const *argv[])
                 presionado = false;
             }
 
+            uis.SetScore(parallax->ConsultScore());
+
             window.clear();
+            //window.draw(back);
             window.draw(*parallax);
             window.draw(*bird);
+            window.draw(uis);
             window.display();
         }
         delete bird;

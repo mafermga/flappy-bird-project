@@ -9,14 +9,15 @@ LIB_DIR = /mingw64/lib
 SRC = src/main.cpp \
 		src/bird.cpp \
 		src/tubo.cpp \
-		src/parallax.cpp
+		src/parallax.cpp \
+		src/UISound.cpp
 
 # Nombre del ejecutable
 TARGET = Game
 
 # Flags de compilación y enlace
 CXXFLAGS = -I$(INCLUDE_DIR)
-LDFLAGS = -L$(LIB_DIR) -lsfml-graphics -lsfml-system -lsfml-window
+LDFLAGS = -L$(LIB_DIR) -lsfml-graphics -lsfml-system -lsfml-window -lsfml-audio
 
 # Regla por defecto
 all: $(TARGET)
