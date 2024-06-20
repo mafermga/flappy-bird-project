@@ -25,6 +25,10 @@ Hasta el momento, se han implementado las ssiguientes funcionalidades:
 - Renderizado del juego en la pantalla utilizando la biblioteca SFML
 - Musica de fondo para cada clic de vuelo, banda sonora, sonido de colisión, pantalla de inicio antes de jugar.
 
+## CAPTURAS DE PANTALLA DEL FUNCIONAMIENTO
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 
 ## Integrantes del Equipo:
